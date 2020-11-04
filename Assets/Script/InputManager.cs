@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputManager : MonoBehaviourPunCallbacks
 {
+    [PunRPC]
     public Vector3 MovementLeft
     {
         get
@@ -10,6 +12,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    [PunRPC]
     public Vector3 MovementRight
     {
         get
