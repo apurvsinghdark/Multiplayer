@@ -11,6 +11,13 @@ public class CreateRoom : MonoBehaviourPunCallbacks
     [SerializeField]
     private TextMeshProUGUI _roomName;
 
+    private RoomsCanvas roomsCanvas;
+
+    public void FirstIntialize(RoomsCanvas canvas)
+    {
+        roomsCanvas = canvas;
+    }
+
     public void OnClick_CreateRoom()
     {
         if (!PhotonNetwork.IsConnected)
@@ -24,6 +31,7 @@ public class CreateRoom : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("Create room successfully.", this);
+        roomsCanvas.CurrentRoom.Show();
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
