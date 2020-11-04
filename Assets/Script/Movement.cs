@@ -1,29 +1,42 @@
 ﻿using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+using System.Resources;
 
-public class Movement : MonoBehaviour
+public class Movement : MonoBehaviourPunCallbacks
 {
     protected GameObject ball;
     private InputManager input;
 
-    [SerializeField] private GameObject prefeb;
+    //[SerializeField] private GameObject prefeb;
     [SerializeField] private Transform target;
 
+    [PunRPC]
     private void Awake()
     {
-        Instantiate(prefeb, target.position, Quaternion.identity);
+        //Instantiate(prefeb, target.position, Quaternion.identity);
         input = GetComponent<InputManager>();
     }
 
+    [PunRPC]
     protected virtual void Start()
     {
         ball = FindObjectOfType<ClickOnObject>().gameObject;
+
+        if (ball == null)
+        {
+            print("Ball Not Found");
+            return;
+        }
     }
 
+    [PunRPC]
     public void OnLeft()
     {
         ball.transform.position += input.MovementLeft;
     }
-
+    
+    [PunRPC]
     public void OnRight()
     {
         ball.transform.position += input.MovementRight;
