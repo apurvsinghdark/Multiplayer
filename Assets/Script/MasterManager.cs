@@ -14,7 +14,7 @@ public class MasterManager : ScriptableObjectSingleton<MasterManager>
 
     public static GameSettings GameSettings { get { return Instance._gameSettings; } }
 
-    private List<NetworkPrefeb> networkPrefebs = new List<NetworkPrefeb>();
+    public List<NetworkPrefeb> networkPrefebs = new List<NetworkPrefeb>();
 
     public static GameObject NetworkInstantiate(GameObject obj, Vector3 position, Quaternion rotation)
     {

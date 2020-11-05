@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: MasterManager
   m_EditorClassIdentifier: 
   _gameSettings: {fileID: 11400000, guid: 6598f18d086c708449c1c7d0d651cea8, type: 2}
+  networkPrefebs:
+  - Prefeb: {fileID: 4027838224363185028, guid: 19a299fc7c3467d448d26e7c99935426,
+      type: 3}
+    Path: Ball

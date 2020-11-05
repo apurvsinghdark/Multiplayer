@@ -3,7 +3,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using System.Resources;
 
-public class Movement : MonoBehaviourPunCallbacks
+public class Movement : MonoBehaviourPun
 {
     protected GameObject ball;
     private InputManager input;
@@ -21,7 +21,8 @@ public class Movement : MonoBehaviourPunCallbacks
     [PunRPC]
     protected virtual void Start()
     {
-        ball = FindObjectOfType<ClickOnObject>().gameObject;
+        //ball = FindObjectOfType<ClickOnObject>().gameObject;
+        ball = GameObject.FindGameObjectWithTag("Ball");
 
         if (ball == null)
         {

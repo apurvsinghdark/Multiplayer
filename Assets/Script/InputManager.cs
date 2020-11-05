@@ -1,7 +1,7 @@
 ﻿using Photon.Pun;
 using UnityEngine;
 
-public class InputManager : MonoBehaviourPunCallbacks
+public class InputManager : MonoBehaviourPun
 {
     [PunRPC]
     public Vector3 MovementLeft
